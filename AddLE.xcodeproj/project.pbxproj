@@ -35,6 +35,7 @@
 		575C719C2C67A2B500E04C65 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C719B2C67A2B500E04C65 /* Font.swift */; };
 		57D273062C67BF4300C52DA6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D273052C67BF4300C52DA6 /* DetailView.swift */; };
 		57D273092C67D68E00C52DA6 /* CustomTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D273082C67D68E00C52DA6 /* CustomTextEditor.swift */; };
+		57D2730B2C67D7A200C52DA6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2730A2C67D7A200C52DA6 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		575C719D2C67A2C200E04C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57D273052C67BF4300C52DA6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		57D273082C67D68E00C52DA6 /* CustomTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEditor.swift; sourceTree = "<group>"; };
+		57D2730A2C67D7A200C52DA6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				57D273072C67D67D00C52DA6 /* Component */,
 				575C71562C6631C300E04C65 /* HomeView.swift */,
 				57D273052C67BF4300C52DA6 /* DetailView.swift */,
+				57D2730A2C67D7A200C52DA6 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D273092C67D68E00C52DA6 /* CustomTextEditor.swift in Sources */,
+				57D2730B2C67D7A200C52DA6 /* ProfileView.swift in Sources */,
 				575C716D2C6750A400E04C65 /* AppDelegate.swift in Sources */,
 				575C71572C6631C300E04C65 /* HomeView.swift in Sources */,
 				575C719C2C67A2B500E04C65 /* Font.swift in Sources */,

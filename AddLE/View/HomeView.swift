@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
+  
   var body: some View {
     NavigationStack {
         GeometryReader { proxy in
           let width = proxy.size.width - (16 * 2)
-          
           
           ScrollView(.vertical) {
             VStack {
@@ -28,8 +28,9 @@ struct HomeView: View {
             print("Refresh")
           }
       }
-      .navigationTitle("DitBool")
+        .navigationTitle("DitBool")
       .navigationBarTitleDisplayMode(.automatic)
+      
     }
   }
   
@@ -37,29 +38,26 @@ struct HomeView: View {
   @ViewBuilder
   private func HeaderButton(width: CGFloat) -> some View {
     HStack(spacing: 0) {
-      Button(
-        action: {
-          
-        },
-        label: {
-          VStack{
+      NavigationLink {
+        
+      } label: {
+        VStack{
+          Spacer()
+          HStack(alignment: .firstTextBaseline) {
             Spacer()
-            HStack(alignment: .firstTextBaseline) {
-              Spacer()
-              Text("Total")
-                .font(AppFont.subtitleMedium)
-                .kerning(-1)
-              Text("12")
-                .font(AppFont.pointBold)
-                .kerning(-1)
-            }
-            .foregroundStyle(AppColor.backgroundWhite)
-            
+            Text("Total")
+              .font(AppFont.subtitleMedium)
+              .kerning(-1)
+            Text("12")
+              .font(AppFont.pointBold)
+              .kerning(-1)
           }
-          .padding(.bottom, 7)
-          .padding(.trailing, 16)
+          .foregroundStyle(AppColor.backgroundWhite)
           
-        })
+        }
+        .padding(.bottom, 7)
+        .padding(.trailing, 16)
+      }
       .frame(width: (width - 16) / 2)
       .background(AppColor.blueKey)
       .clipShape(RoundedRectangle(cornerRadius: 16))
@@ -72,26 +70,24 @@ struct HomeView: View {
       
       Spacer().frame(width: 16)
       
-      Button(
-        action: {
-          
-        },
-        label: {
-          ZStack {
-            VStack{
+      NavigationLink {
+        ProfileView()
+      } label: {
+        ZStack {
+          VStack{
+            Spacer()
+            HStack {
               Spacer()
-              HStack {
-                Spacer()
-                Text("Profile")
-                  .font(AppFont.subtitleMedium)
-                  .kerning(-1)
-                  .foregroundStyle(AppColor.blackText)
-              }
+              Text("Profile")
+                .font(AppFont.subtitleMedium)
+                .kerning(-1)
+                .foregroundStyle(AppColor.blackText)
             }
-            .padding(.bottom, 12)
-            .padding(.trailing, 16)
           }
-        })
+          .padding(.bottom, 12)
+          .padding(.trailing, 16)
+        }
+      }
       .frame(width: (width - 16) / 2)
       .background(AppColor.blueSub)
       .clipShape(RoundedRectangle(cornerRadius: 16))
@@ -101,6 +97,7 @@ struct HomeView: View {
           .frame(width: 92, height: 80)
           .offset(x: -30, y: -35)
       }
+      
     }
     .frame(height: 86)
   }

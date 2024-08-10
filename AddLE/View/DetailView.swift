@@ -19,16 +19,16 @@ struct DetailView: View {
   }
   
   var body: some View {
-    ZStack {
+    ZStack(alignment: .bottom) {
       AppColor.backgroundWhite.ignoresSafeArea(edges: .bottom)
       
       ScrollView {
         VStack(alignment: .leading) {
-                    AsyncImage(url: URL(string: imageData.imageUrl)) { image in
-                      image.resizable().aspectRatio(contentMode: .fit)
-                    } placeholder: {
-                      ProgressView()
-                    }
+          AsyncImage(url: URL(string: imageData.imageUrl)) { image in
+            image.resizable().aspectRatio(contentMode: .fit)
+          } placeholder: {
+            ProgressView()
+          }
           
           VStack(alignment: .leading, spacing: 40) {
             MapView()
@@ -40,9 +40,26 @@ struct DetailView: View {
           .padding(16)
           
         }
+        .padding(.bottom, 80)
       }
+      
+      Button(
+        action: {
+          
+        },
+        label: {
+          Text("Done")
+            .font(.custom(Pretendard.bold, size: 24))
+            .foregroundStyle(AppColor.backgroundWhite)
+            .padding(.vertical, 10)
+      })
+      .frame(minWidth: 0, maxWidth: .infinity)
+      .background(AppColor.blueKey)
+      .clipShape(RoundedRectangle(cornerRadius: 12))
+      .padding()
     }
     .navigationBarTitleDisplayMode(.inline)
+    
   }
   
   @ViewBuilder
@@ -130,7 +147,7 @@ struct DetailView: View {
       Text("Details")
         .font(.custom(Pretendard.bold, size: 24))
         .foregroundStyle(AppColor.blackText)
-    
+      
       CustomTextEditor(text: $text)
         .frame(height: 100)
         .clipShape(RoundedRectangle(cornerRadius: 12))
