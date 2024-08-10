@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ImageDetection: Codable {
+struct ImageDetection: Codable, Hashable {
     var date: Date
     var imageUrl: String
     var confidence: Int
@@ -21,3 +21,27 @@ struct ImageDetection: Codable {
     }
 }
 
+extension ImageDetection {
+  static let dummy: [ImageDetection] = [
+    .init(
+      date: .now,
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvIoKwG69OJ-6ZY0nEXGm76c5A8XD1DrNEwA&s",
+      confidence: 0, label: 0, processStatus: 0),
+    .init(
+      date: .now,
+      imageUrl: "https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      confidence: 0, label: 0, processStatus: 0),
+    .init(
+      date: .now,
+      imageUrl: "https://wallpapers.com/images/featured/free-background-9yo0cfxevhv8jmhq.jpg",
+      confidence: 0, label: 0, processStatus: 0),
+    .init(
+      date: .now,
+      imageUrl: "https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      confidence: 0, label: 0, processStatus: 0),
+    .init(
+      date: .now,
+      imageUrl: "https://wallpapers.com/images/featured/free-background-9yo0cfxevhv8jmhq.jpg",
+      confidence: 0, label: 0, processStatus: 0)
+  ]
+}
