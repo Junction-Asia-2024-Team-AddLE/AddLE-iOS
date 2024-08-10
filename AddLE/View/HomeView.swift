@@ -10,13 +10,9 @@ import SwiftUI
 struct HomeView: View {
   var body: some View {
     NavigationStack {
-      ZStack(alignment: .top) {
-        AppColor.backgroundWhite.ignoresSafeArea(edges: .bottom)
-        
-        Divider()
-        
         GeometryReader { proxy in
           let width = proxy.size.width - (16 * 2)
+          
           
           ScrollView(.vertical) {
             VStack {
@@ -35,18 +31,25 @@ struct HomeView: View {
               
               LazyVStack(spacing: 32) {
                 ForEach(ImageDetection.dummy, id: \.self) { data in
-                  ViolationsListCell(data, width: width)
-                    .padding(.horizontal, 16)
-                    .onTapGesture {
-                      print("tap")
-                    }
+                  
+                  NavigationLink {
+                    DetailView()
+                  } label: {
+                    ViolationsListCell(data, width: width)
+                      .padding(.horizontal, 16)
+                      
+                  }
                 }
               }
             }
           }
-        }
+          .background(AppColor.backgroundWhite)
+          .refreshable {
+            print("Refresh")
+          }
       }
       .navigationTitle("DitBool")
+      .navigationBarTitleDisplayMode(.automatic)
     }
   }
   
@@ -163,6 +166,7 @@ struct HomeView: View {
           Text(data.date.koreanDateFormat)
             .font(.custom(Pretendard.regular, size: 16))
         }
+        
         Spacer()
         Image(systemName: "chevron.right")
           .resizable()
@@ -170,6 +174,7 @@ struct HomeView: View {
           .frame(width: 20, height: 20)
       }
       .padding(.horizontal)
+      .foregroundStyle(AppColor.blackText)
       
     }
   }

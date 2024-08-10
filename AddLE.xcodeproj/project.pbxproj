@@ -33,6 +33,8 @@
 		575C71992C67A2AF00E04C65 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 575C71902C67A2AF00E04C65 /* Pretendard-ExtraLight.otf */; };
 		575C719A2C67A2AF00E04C65 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 575C71912C67A2AF00E04C65 /* Pretendard-Bold.otf */; };
 		575C719C2C67A2B500E04C65 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C719B2C67A2B500E04C65 /* Font.swift */; };
+		57D273062C67BF4300C52DA6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D273052C67BF4300C52DA6 /* DetailView.swift */; };
+		57D273092C67D68E00C52DA6 /* CustomTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D273082C67D68E00C52DA6 /* CustomTextEditor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		575C71912C67A2AF00E04C65 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		575C719B2C67A2B500E04C65 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		575C719D2C67A2C200E04C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57D273052C67BF4300C52DA6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		57D273082C67D68E00C52DA6 /* CustomTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +104,8 @@
 				575C71802C679AEB00E04C65 /* Constant */,
 				575C717B2C6769A900E04C65 /* Extension */,
 				575C71732C675C1300E04C65 /* Model */,
-				575C716E2C67515300E04C65 /* Service */,
 				575C71762C6767D700E04C65 /* View */,
+				575C716E2C67515300E04C65 /* Service */,
 				575C71832C679B0A00E04C65 /* Resource */,
 				575C715A2C6631C400E04C65 /* Preview Content */,
 			);
@@ -147,7 +151,9 @@
 		575C71762C6767D700E04C65 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				57D273072C67D67D00C52DA6 /* Component */,
 				575C71562C6631C300E04C65 /* HomeView.swift */,
+				57D273052C67BF4300C52DA6 /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,6 +209,14 @@
 				575C719B2C67A2B500E04C65 /* Font.swift */,
 			);
 			path = Design;
+			sourceTree = "<group>";
+		};
+		57D273072C67D67D00C52DA6 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				57D273082C67D68E00C52DA6 /* CustomTextEditor.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,11 +308,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D273092C67D68E00C52DA6 /* CustomTextEditor.swift in Sources */,
 				575C716D2C6750A400E04C65 /* AppDelegate.swift in Sources */,
 				575C71572C6631C300E04C65 /* HomeView.swift in Sources */,
 				575C719C2C67A2B500E04C65 /* Font.swift in Sources */,
 				575C71702C67516B00E04C65 /* FirebaseService.swift in Sources */,
 				575C717D2C6769B400E04C65 /* Date+Ext.swift in Sources */,
+				57D273062C67BF4300C52DA6 /* DetailView.swift in Sources */,
 				575C717F2C6769BA00E04C65 /* Bundle+Ext.swift in Sources */,
 				575C71822C679AF900E04C65 /* Color.swift in Sources */,
 				575C71872C679D3C00E04C65 /* Firebase.swift in Sources */,
