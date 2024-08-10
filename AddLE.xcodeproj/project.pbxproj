@@ -23,6 +23,16 @@
 		575C71822C679AF900E04C65 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C71812C679AF900E04C65 /* Color.swift */; };
 		575C71852C679B1600E04C65 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 575C71842C679B1600E04C65 /* Color.xcassets */; };
 		575C71872C679D3C00E04C65 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C71862C679D3C00E04C65 /* Firebase.swift */; };
+		575C71922C67A2AF00E04C65 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 575C71892C67A2AE00E04C65 /* Pretendard-Regular.otf */; };
+		575C71932C67A2AF00E04C65 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 575C718A2C67A2AF00E04C65 /* Pretendard-Black.otf */; };
+		575C71942C67A2AF00E04C65 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 575C718B2C67A2AF00E04C65 /* Pretendard-Medium.otf */; };
+		575C71952C67A2AF00E04C65 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 575C718C2C67A2AF00E04C65 /* Pretendard-SemiBold.otf */; };
+		575C71962C67A2AF00E04C65 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 575C718D2C67A2AF00E04C65 /* Pretendard-ExtraBold.otf */; };
+		575C71972C67A2AF00E04C65 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 575C718E2C67A2AF00E04C65 /* Pretendard-Light.otf */; };
+		575C71982C67A2AF00E04C65 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 575C718F2C67A2AF00E04C65 /* Pretendard-Thin.otf */; };
+		575C71992C67A2AF00E04C65 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 575C71902C67A2AF00E04C65 /* Pretendard-ExtraLight.otf */; };
+		575C719A2C67A2AF00E04C65 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 575C71912C67A2AF00E04C65 /* Pretendard-Bold.otf */; };
+		575C719C2C67A2B500E04C65 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C719B2C67A2B500E04C65 /* Font.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +51,17 @@
 		575C71812C679AF900E04C65 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		575C71842C679B1600E04C65 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		575C71862C679D3C00E04C65 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
+		575C71892C67A2AE00E04C65 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		575C718A2C67A2AF00E04C65 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		575C718B2C67A2AF00E04C65 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		575C718C2C67A2AF00E04C65 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		575C718D2C67A2AF00E04C65 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		575C718E2C67A2AF00E04C65 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		575C718F2C67A2AF00E04C65 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		575C71902C67A2AF00E04C65 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		575C71912C67A2AF00E04C65 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		575C719B2C67A2B500E04C65 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		575C719D2C67A2C200E04C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +123,7 @@
 				575C716C2C6750A400E04C65 /* AppDelegate.swift */,
 				575C71712C67526000E04C65 /* GoogleService-Info.plist */,
 				575C71792C67698800E04C65 /* SecretKey.plist */,
+				575C719D2C67A2C200E04C65 /* Info.plist */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -142,7 +164,7 @@
 		575C71802C679AEB00E04C65 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				575C71812C679AF900E04C65 /* Color.swift */,
+				575C719E2C67A38F00E04C65 /* Design */,
 				575C71862C679D3C00E04C65 /* Firebase.swift */,
 			);
 			path = Constant;
@@ -151,10 +173,36 @@
 		575C71832C679B0A00E04C65 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				575C71882C67A29E00E04C65 /* Font */,
 				575C71582C6631C400E04C65 /* Assets.xcassets */,
 				575C71842C679B1600E04C65 /* Color.xcassets */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		575C71882C67A29E00E04C65 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				575C718A2C67A2AF00E04C65 /* Pretendard-Black.otf */,
+				575C71912C67A2AF00E04C65 /* Pretendard-Bold.otf */,
+				575C718D2C67A2AF00E04C65 /* Pretendard-ExtraBold.otf */,
+				575C71902C67A2AF00E04C65 /* Pretendard-ExtraLight.otf */,
+				575C718E2C67A2AF00E04C65 /* Pretendard-Light.otf */,
+				575C718B2C67A2AF00E04C65 /* Pretendard-Medium.otf */,
+				575C71892C67A2AE00E04C65 /* Pretendard-Regular.otf */,
+				575C718C2C67A2AF00E04C65 /* Pretendard-SemiBold.otf */,
+				575C718F2C67A2AF00E04C65 /* Pretendard-Thin.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		575C719E2C67A38F00E04C65 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				575C71812C679AF900E04C65 /* Color.swift */,
+				575C719B2C67A2B500E04C65 /* Font.swift */,
+			);
+			path = Design;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,9 +271,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				575C717A2C67698800E04C65 /* SecretKey.plist in Resources */,
+				575C71922C67A2AF00E04C65 /* Pretendard-Regular.otf in Resources */,
+				575C71962C67A2AF00E04C65 /* Pretendard-ExtraBold.otf in Resources */,
+				575C71982C67A2AF00E04C65 /* Pretendard-Thin.otf in Resources */,
 				575C715C2C6631C400E04C65 /* Preview Assets.xcassets in Resources */,
+				575C71942C67A2AF00E04C65 /* Pretendard-Medium.otf in Resources */,
+				575C71972C67A2AF00E04C65 /* Pretendard-Light.otf in Resources */,
+				575C71992C67A2AF00E04C65 /* Pretendard-ExtraLight.otf in Resources */,
 				575C71852C679B1600E04C65 /* Color.xcassets in Resources */,
+				575C719A2C67A2AF00E04C65 /* Pretendard-Bold.otf in Resources */,
 				575C71592C6631C400E04C65 /* Assets.xcassets in Resources */,
+				575C71952C67A2AF00E04C65 /* Pretendard-SemiBold.otf in Resources */,
+				575C71932C67A2AF00E04C65 /* Pretendard-Black.otf in Resources */,
 				575C71722C67526000E04C65 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +296,7 @@
 			files = (
 				575C716D2C6750A400E04C65 /* AppDelegate.swift in Sources */,
 				575C71572C6631C300E04C65 /* HomeView.swift in Sources */,
+				575C719C2C67A2B500E04C65 /* Font.swift in Sources */,
 				575C71702C67516B00E04C65 /* FirebaseService.swift in Sources */,
 				575C717D2C6769B400E04C65 /* Date+Ext.swift in Sources */,
 				575C717F2C6769BA00E04C65 /* Bundle+Ext.swift in Sources */,
@@ -382,6 +440,7 @@
 				DEVELOPMENT_TEAM = 5DFZR8RCQR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AddLE/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -415,6 +474,7 @@
 				DEVELOPMENT_TEAM = 5DFZR8RCQR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AddLE/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
