@@ -39,7 +39,7 @@ struct HomeView: View {
   private func HeaderButton(width: CGFloat) -> some View {
     HStack(spacing: 0) {
       NavigationLink {
-        
+        NotificationView()
       } label: {
         VStack{
           Spacer()

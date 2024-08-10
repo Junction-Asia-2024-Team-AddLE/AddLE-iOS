@@ -36,6 +36,7 @@
 		57D273062C67BF4300C52DA6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D273052C67BF4300C52DA6 /* DetailView.swift */; };
 		57D273092C67D68E00C52DA6 /* CustomTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D273082C67D68E00C52DA6 /* CustomTextEditor.swift */; };
 		57D2730B2C67D7A200C52DA6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2730A2C67D7A200C52DA6 /* ProfileView.swift */; };
+		57D2730D2C67F0D200C52DA6 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2730C2C67F0D200C52DA6 /* NotificationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		57D273052C67BF4300C52DA6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		57D273082C67D68E00C52DA6 /* CustomTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEditor.swift; sourceTree = "<group>"; };
 		57D2730A2C67D7A200C52DA6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		57D2730C2C67F0D200C52DA6 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				575C71562C6631C300E04C65 /* HomeView.swift */,
 				57D273052C67BF4300C52DA6 /* DetailView.swift */,
 				57D2730A2C67D7A200C52DA6 /* ProfileView.swift */,
+				57D2730C2C67F0D200C52DA6 /* NotificationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				575C717D2C6769B400E04C65 /* Date+Ext.swift in Sources */,
 				57D273062C67BF4300C52DA6 /* DetailView.swift in Sources */,
 				575C717F2C6769BA00E04C65 /* Bundle+Ext.swift in Sources */,
+				57D2730D2C67F0D200C52DA6 /* NotificationView.swift in Sources */,
 				575C71822C679AF900E04C65 /* Color.swift in Sources */,
 				575C71872C679D3C00E04C65 /* Firebase.swift in Sources */,
 				575C71752C675C6300E04C65 /* ImageDetection.swift in Sources */,
