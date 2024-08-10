@@ -20,27 +20,7 @@ struct HomeView: View {
                 .padding(.top, 30)
                 .padding(.horizontal, 16)
               
-              HStack {
-                Text("Violations")
-                  .font(AppFont.titleBold)
-                Spacer()
-              }
-              .padding(.top, 52)
-              .padding(.horizontal, 24)
-              
-              
-              LazyVStack(spacing: 32) {
-                ForEach(ImageDetection.dummy, id: \.self) { data in
-                  
-                  NavigationLink {
-                    DetailView()
-                  } label: {
-                    ViolationsListCell(data, width: width)
-                      .padding(.horizontal, 16)
-                      
-                  }
-                }
-              }
+              ViolationsView(width: width)
             }
           }
           .background(AppColor.backgroundWhite)
@@ -123,6 +103,32 @@ struct HomeView: View {
       }
     }
     .frame(height: 86)
+  }
+  
+  // MARK: - ViolationsView
+  @ViewBuilder
+  private func ViolationsView(width: CGFloat) -> some View {
+    HStack {
+      Text("Violations")
+        .font(AppFont.titleBold)
+      Spacer()
+    }
+    .padding(.top, 52)
+    .padding(.horizontal, 24)
+    
+    
+    LazyVStack(spacing: 32) {
+      ForEach(ImageDetection.dummy, id: \.self) { data in
+        
+        NavigationLink {
+          DetailView()
+        } label: {
+          ViolationsListCell(data, width: width)
+            .padding(.horizontal, 16)
+            
+        }
+      }
+    }
   }
   
   // MARK: - ViolationsListCell
