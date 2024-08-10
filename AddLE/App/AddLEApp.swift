@@ -20,9 +20,9 @@ struct AddLEApp: App {
     appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
     
     // UINavigationBarAppearance 설정 적용
-    UINavigationBar.appearance().standardAppearance = appearance
-    UINavigationBar.appearance().scrollEdgeAppearance = appearance
-    UINavigationBar.appearance().compactAppearance = appearance
+//    UINavigationBar.appearance().standardAppearance = appearance
+//    UINavigationBar.appearance().scrollEdgeAppearance = appearance
+//    UINavigationBar.appearance().compactAppearance = appearance
   }
   
   var body: some Scene {

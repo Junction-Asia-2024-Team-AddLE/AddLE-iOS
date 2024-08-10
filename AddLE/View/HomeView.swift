@@ -11,28 +11,28 @@ struct HomeView: View {
   
   var body: some View {
     NavigationStack {
-        GeometryReader { proxy in
-          let width = proxy.size.width - (16 * 2)
-          
-          ScrollView(.vertical) {
-            VStack {
-              HeaderButton(width: width)
-                .padding(.top, 30)
-                .padding(.horizontal, 16)
-              
-              ViolationsView(width: width)
-            }
+      GeometryReader { proxy in
+        let width = proxy.size.width - (16 * 2)
+        
+        ScrollView(.vertical) {
+          VStack {
+            HeaderButton(width: width)
+              .padding(.top, 30)
+              .padding(.horizontal, 16)
+            
+            ViolationsView(width: width)
           }
-          .background(AppColor.backgroundWhite)
-          .refreshable {
-            print("Refresh")
-          }
+        }
+        .background(AppColor.backgroundWhite)
+        .refreshable {
+          print("Refresh")
+        }
       }
-        .navigationTitle("DitBool")
-      .navigationBarTitleDisplayMode(.automatic)
-      
+      .navigationTitle("DitBool")
+      .navigationBarTitleDisplayMode(.large)
     }
   }
+  
   
   // MARK: - HeaderButton
   @ViewBuilder
@@ -58,7 +58,7 @@ struct HomeView: View {
         .padding(.bottom, 7)
         .padding(.trailing, 16)
       }
-      .frame(width: (width - 16) / 2)
+      .frame(width: max((width - 16) / 2, 0))
       .background(AppColor.blueKey)
       .clipShape(RoundedRectangle(cornerRadius: 16))
       .overlay {
@@ -88,7 +88,7 @@ struct HomeView: View {
           .padding(.trailing, 16)
         }
       }
-      .frame(width: (width - 16) / 2)
+      .frame(width: max((width - 16) / 2, 0))
       .background(AppColor.blueSub)
       .clipShape(RoundedRectangle(cornerRadius: 16))
       .overlay {
@@ -122,7 +122,7 @@ struct HomeView: View {
         } label: {
           ViolationsListCell(data, width: width)
             .padding(.horizontal, 16)
-            
+          
         }
       }
     }
@@ -138,7 +138,7 @@ struct HomeView: View {
       AsyncImage(url: URL(string: data.imageUrl)) { image in
         image
           .resizable()
-          .frame(width: width, height: width)
+          
           .clipShape(RoundedRectangle(cornerRadius: 28))
           .overlay {
             Button(
@@ -154,13 +154,17 @@ struct HomeView: View {
                     .frame(width: 35, height: 35)
                     .foregroundStyle(AppColor.blackText)
                 }
-            })
+              })
             .offset(x: (width / 2) - 18, y: -(width / 2))
           }
       } placeholder: {
         ProgressView()
-          .frame(width: width, height: width)
+          
       }
+      .frame(
+        width: max(width, 0),
+        height: max(width, 0)
+      )
       
       HStack {
         VStack(alignment: .leading) {

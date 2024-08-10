@@ -14,10 +14,6 @@ struct DetailView: View {
   
   let imageData = ImageDetection.dummy[0]
   
-  init() {
-    UIScrollView.appearance().bounces = false
-  }
-  
   var body: some View {
     ZStack(alignment: .bottom) {
       AppColor.backgroundWhite.ignoresSafeArea(edges: .bottom)
