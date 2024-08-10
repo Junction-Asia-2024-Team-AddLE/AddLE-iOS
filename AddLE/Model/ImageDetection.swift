@@ -21,11 +21,3 @@ struct ImageDetection: Codable {
     }
 }
 
-struct FStore {
-    static let collection = "Detection"
-    static let date = "date"
-    static let image = "image"
-    static let confidence = "confidence"
-    static let label = "label"
-    static let process = "status"
-}

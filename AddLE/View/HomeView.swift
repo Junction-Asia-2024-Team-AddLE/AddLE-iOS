@@ -9,16 +9,24 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            ZStack(alignment: .top) {
+                AppColor.backgroundWhite.ignoresSafeArea(edges: .bottom)
+                
+                Divider()
+                
+                VStack {
+                    Image(systemName: "globe")
+                        .imageScale(.large)
+                        .foregroundStyle(.tint)
+                    Text("Hello, world!")
+                }
+                .padding()
+            }
+            
+            .navigationTitle("딧불")
         }
-        .padding()
-        .task {
-            await FirebaseService.shared.uploadImage()
-        }
+        
     }
 }
 
