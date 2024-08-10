@@ -16,6 +16,9 @@ struct HomeView: View {
             Text("Hello, world!")
         }
         .padding()
+        .task {
+            await FirebaseService.shared.uploadImage()
+        }
     }
 }
 

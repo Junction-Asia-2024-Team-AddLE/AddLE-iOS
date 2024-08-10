@@ -1,6 +1,7 @@
 # Created by https://www.toptal.com/developers/gitignore/api/swift,xcode
 # Edit at https://www.toptal.com/developers/gitignore?templates=swift,xcode
 
+SecretKey.plist
 GoogleService-Info.plist
 *.xcuserstate
 .DS_Store
