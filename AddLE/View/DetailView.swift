@@ -9,10 +9,10 @@ import SwiftUI
 import MapKit
 
 struct DetailView: View {
-  @State private var selectedOption: Int = 1
-  @State private var text: String = ""
   
-  let imageData = ImageDetection.dummy[0]
+  @State var detailViewModel: DetailViewModel
+  
+  let imageData = Violation.dummy[0]
   
   var body: some View {
     ZStack(alignment: .bottom) {
@@ -20,11 +20,16 @@ struct DetailView: View {
       
       ScrollView {
         VStack(alignment: .leading) {
-          AsyncImage(url: URL(string: imageData.imageUrl)) { image in
-            image.resizable().aspectRatio(contentMode: .fit)
+          AsyncImage(url: URL(string: detailViewModel.violation.imageUrl)) { image in
+            image
+              .resizable()
+              .aspectRatio(contentMode: .fit)
           } placeholder: {
             ProgressView()
+              .frame(minWidth: 0, maxWidth: .infinity, minHeight: 300, maxHeight: 300)
+              
           }
+          
           
           VStack(alignment: .leading, spacing: 40) {
             MapView()
@@ -41,7 +46,7 @@ struct DetailView: View {
       
       Button(
         action: {
-          
+          detailViewModel.isDisplayConfirmAlert = true
         },
         label: {
           Text("Done")
@@ -55,43 +60,67 @@ struct DetailView: View {
       .padding()
     }
     .navigationBarTitleDisplayMode(.inline)
-    
+    .alert("", isPresented: $detailViewModel.isDisplayConfirmAlert) {
+      Button(action: {
+        detailViewModel.isDisplayDoneAlert = true
+      }, label: {
+        Text("Submit")
+      })
+      
+      Button(role: .cancel) {
+        
+      } label: {
+        Text("Cancel")
+      }
+    }
+    .alert("", isPresented: $detailViewModel.isDisplayDoneAlert) {
+      Button(action: {
+        
+      }, label: {
+        Text("Done")
+      })
+    }
   }
   
   @ViewBuilder
   private func MapView() -> some View {
-    Text(imageData.date.koreanDateFormat)
-      .font(.custom(Pretendard.regular, size: 16))
-      .foregroundStyle(AppColor.blackText)
-    
-    Text("11, Yoodong-gil 26beon-gil")
-      .font(.custom(Pretendard.bold, size: 24))
-      .foregroundStyle(AppColor.blackText)
-      .padding(.top, 20)
-      .kerning(-1)
-    
-    Text("Namgu, Pohang-si, Gyeongsangbuk-do")
-      .font(.custom(Pretendard.regular, size: 16))
-      .foregroundStyle(AppColor.blackText)
-    
-    Map(
-      initialPosition: .region(
-        .init(
-          center: .init(
-            latitude: 35.83855686330755,
-            longitude: 129.28806264429252
-          ),
-          latitudinalMeters: 200,
-          longitudinalMeters: 200)
-      )
-    ) {
-      Marker("", systemImage: "heart", coordinate: .init(
-        latitude: 35.83855686330755,
-        longitude: 129.28806264429252
-      ))
+    VStack(alignment: .leading, spacing: 0) {
+      Text(detailViewModel.violation.date.koreanDateFormat)
+        .font(.custom(Pretendard.regular, size: 16))
+        .foregroundStyle(AppColor.blackText)
+      
+      Text("11, Yoodong-gil 26beon-gil")
+        .font(.custom(Pretendard.bold, size: 24))
+        .foregroundStyle(AppColor.blackText)
+        .padding(.top, 20)
+        .kerning(-1)
+      
+      Text("Namgu, Pohang-si, Gyeongsangbuk-do")
+        .font(.custom(Pretendard.regular, size: 16))
+        .foregroundStyle(AppColor.blackText)
+        .padding(.top, 8)
+      
+      Map(
+        initialPosition: .region(
+          .init(
+            center: .init(
+              latitude: 35.83855686330755,
+              longitude: 129.28806264429252
+            ),
+            latitudinalMeters: 200,
+            longitudinalMeters: 200)
+        )
+      ) {
+        Marker("", systemImage: "mappin", coordinate: .init(
+          latitude: 35.83855686330755,
+          longitude: 129.28806264429252
+        ))
+      }
+      .aspectRatio(1.5, contentMode: .fit)
+      .clipShape(RoundedRectangle(cornerRadius: 12))
+      .padding(.top, 24)
     }
-    .aspectRatio(1.5, contentMode: .fit)
-    .clipShape(RoundedRectangle(cornerRadius: 12))
+    
   }
   
   @ViewBuilder
@@ -110,22 +139,22 @@ struct DetailView: View {
       
       HStack(spacing: 16) {
         Button(action: {
-          selectedOption = 1 // 첫 번째 옵션 선택
+          detailViewModel.policity = true // 첫 번째 옵션 선택
         }) {
           HStack {
-            Image(systemName: selectedOption == 1 ? "circle.fill" : "circle")
-              .foregroundColor(selectedOption == 1 ? AppColor.blackText : AppColor.grayKey)
+            Image(systemName: detailViewModel.policity ? "circle.fill" : "circle")
+              .foregroundColor(detailViewModel.policity ? AppColor.blackText : AppColor.grayKey)
             Text("Yes")
           }
         }
         
         // 두 번째 체크박스
         Button(action: {
-          selectedOption = 2 // 두 번째 옵션 선택
+          detailViewModel.policity = false // 두 번째 옵션 선택
         }) {
           HStack {
-            Image(systemName: selectedOption == 2 ? "circle.fill" : "circle")
-              .foregroundColor(selectedOption == 2 ? AppColor.blackText : AppColor.grayKey)
+            Image(systemName: !detailViewModel.policity ? "circle.fill" : "circle")
+              .foregroundColor(!detailViewModel.policity ? AppColor.blackText : AppColor.grayKey)
             Text("No")
           }
         }
@@ -144,7 +173,7 @@ struct DetailView: View {
         .font(.custom(Pretendard.bold, size: 24))
         .foregroundStyle(AppColor.blackText)
       
-      CustomTextEditor(text: $text)
+      CustomTextEditor(text: $detailViewModel.detail)
         .frame(height: 100)
         .clipShape(RoundedRectangle(cornerRadius: 12))
     }
@@ -155,5 +184,5 @@ struct DetailView: View {
 
 
 #Preview {
-  DetailView()
+  DetailView(detailViewModel: DetailViewModel(violation: Violation.dummy[0]))
 }

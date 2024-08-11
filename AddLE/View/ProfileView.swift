@@ -45,6 +45,7 @@ struct ProfileView: View {
     }
   }
   
+  // MARK: - NameTextField
   @ViewBuilder
   private func NameTextField() -> some View {
     VStack(alignment: .leading) {
@@ -65,6 +66,7 @@ struct ProfileView: View {
     }
   }
   
+  // MARK: - ContactTextField
   @ViewBuilder
   private func ContactTextField() -> some View {
     VStack(alignment: .leading) {
@@ -97,6 +99,7 @@ struct ProfileView: View {
     }
   }
   
+  // MARK: - AddressTextField
   @ViewBuilder
   private func AddressTextField() -> some View {
     VStack(alignment: .leading, spacing: 12) {

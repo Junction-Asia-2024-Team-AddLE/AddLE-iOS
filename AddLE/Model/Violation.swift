@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ImageDetection: Codable, Hashable {
+struct Violation: Codable, Hashable {
   var id: UUID = UUID()
   var date: Date
   var imageUrl: String
@@ -22,8 +22,8 @@ struct ImageDetection: Codable, Hashable {
   }
 }
 
-extension ImageDetection {
-  static let dummy: [ImageDetection] = [
+extension Violation {
+  static let dummy: [Violation] = [
     .init(
       date: .now,
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvIoKwG69OJ-6ZY0nEXGm76c5A8XD1DrNEwA&s",

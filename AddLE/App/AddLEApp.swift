@@ -10,8 +10,22 @@ import SwiftUI
 @main
 struct AddLEApp: App {
   @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+  @State private var homeViewModel = HomeViewModel()
   
   init() {
+    initNavigationSetting()
+  }
+  
+  var body: some Scene {
+    WindowGroup {
+      HomeView()
+        .environment(homeViewModel)
+    }
+  }
+}
+
+extension AddLEApp {
+  private func initNavigationSetting() {
     let appearance = UINavigationBarAppearance()
     appearance.configureWithTransparentBackground()
     appearance.backgroundColor = UIColor.white // Navigation Bar 배경색 설정
@@ -23,11 +37,5 @@ struct AddLEApp: App {
     UINavigationBar.appearance().standardAppearance = appearance
     UINavigationBar.appearance().scrollEdgeAppearance = appearance
     UINavigationBar.appearance().compactAppearance = appearance
-  }
-  
-  var body: some Scene {
-    WindowGroup {
-      HomeView()
-    }
   }
 }

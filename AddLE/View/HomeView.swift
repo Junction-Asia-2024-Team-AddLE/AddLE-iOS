@@ -8,28 +8,38 @@
 import SwiftUI
 
 struct HomeView: View {
+  @Environment(HomeViewModel.self) private var homeViewModel
+  @State private var isLoading: Bool = true
   
   var body: some View {
     NavigationStack {
-      GeometryReader { proxy in
-        let width = proxy.size.width - (16 * 2)
-        
-        ScrollView(.vertical) {
-          VStack {
-            HeaderButton(width: width)
-              .padding(.top, 30)
-              .padding(.horizontal, 16)
-            
-            ViolationsView(width: width)
+      if isLoading {
+        ProgressView()
+      } else {
+        GeometryReader { proxy in
+          let width = proxy.size.width - (16 * 2)
+          
+          ScrollView(.vertical) {
+            VStack {
+              HeaderButton(width: width)
+                .padding(.top, 30)
+                .padding(.horizontal, 16)
+              
+              ViolationsView(width: width)
+            }
+          }
+          .background(AppColor.backgroundWhite)
+          .refreshable {
+              homeViewModel.violations = await fetchData()
           }
         }
-        .background(AppColor.backgroundWhite)
-        .refreshable {
-          print("Refresh")
-        }
+        .navigationTitle("DitBool")
+        .navigationBarTitleDisplayMode(.large)
       }
-      .navigationTitle("DitBool")
-      .navigationBarTitleDisplayMode(.large)
+    }
+    .task {
+      homeViewModel.violations = await fetchData()
+      isLoading = false
     }
   }
   
@@ -115,10 +125,10 @@ struct HomeView: View {
     
     
     LazyVStack(spacing: 32) {
-      ForEach(ImageDetection.dummy, id: \.self) { data in
+      ForEach(Violation.dummy, id: \.self) { data in
         
         NavigationLink {
-          DetailView()
+          DetailView(detailViewModel: DetailViewModel(violation: data))
         } label: {
           ViolationsListCell(data, width: width)
             .padding(.horizontal, 16)
@@ -131,7 +141,7 @@ struct HomeView: View {
   // MARK: - ViolationsListCell
   @ViewBuilder
   private func ViolationsListCell(
-    _ data: ImageDetection,
+    _ data: Violation,
     width: CGFloat
   ) -> some View {
     VStack {
@@ -187,6 +197,13 @@ struct HomeView: View {
   }
 }
 
+extension HomeView {
+  private func fetchData() async -> [Violation] {
+    await FirebaseService.shared.fetchStore()
+  }
+}
+
 #Preview {
   HomeView()
+    .environment(HomeViewModel())
 }
