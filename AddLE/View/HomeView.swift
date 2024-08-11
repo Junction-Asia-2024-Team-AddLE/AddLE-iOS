@@ -115,17 +115,20 @@ struct HomeView: View {
   // MARK: - ViolationsView
   @ViewBuilder
   private func ViolationsView(width: CGFloat) -> some View {
-    HStack {
-      Text("Violations")
+    HStack(alignment: .center, spacing: 0) {
+      Text("Violations ")
         .font(AppFont.titleBold)
+      Text("(\(homeViewModel.violations.count))")
+        .font(.custom(Pretendard.bold, size: 24))
       Spacer()
     }
+    .foregroundStyle(AppColor.blackText)
     .padding(.top, 52)
     .padding(.horizontal, 24)
     
     
     LazyVStack(spacing: 32) {
-      ForEach(Violation.dummy, id: \.self) { data in
+      ForEach(homeViewModel.violations, id: \.self) { data in
         
         NavigationLink {
           DetailView(detailViewModel: DetailViewModel(violation: data))
