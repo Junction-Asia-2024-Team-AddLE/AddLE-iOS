@@ -100,7 +100,7 @@ struct HomeView: View {
       NavigationLink {
         ProfileView()
       } label: {
-        ZStack {
+        
           VStack{
             Spacer()
             HStack {
@@ -113,7 +113,7 @@ struct HomeView: View {
           }
           .padding(.bottom, 12)
           .padding(.trailing, 16)
-        }
+        
       }
       .frame(width: max((width - 16) / 2, 0))
       .background(AppColor.blueSub)

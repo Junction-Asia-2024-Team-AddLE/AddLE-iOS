@@ -50,12 +50,16 @@ struct DetailView: View {
           detailViewModel.isDisplayConfirmAlert = true
         },
         label: {
-          Text("Done")
-            .font(.custom(Pretendard.bold, size: 24))
-            .foregroundStyle(AppColor.backgroundWhite)
-            .padding(.vertical, 10)
+          HStack {
+            Spacer()
+            Text("Done")
+              .font(.custom(Pretendard.bold, size: 24))
+              .foregroundStyle(AppColor.backgroundWhite)
+              .padding(.vertical, 10)
+            Spacer()
+          }
+          
       })
-      .frame(minWidth: 0, maxWidth: .infinity)
       .background(AppColor.blueKey)
       .clipShape(RoundedRectangle(cornerRadius: 12))
       .padding()
