@@ -35,7 +35,6 @@ extension FirebaseService {
       print("Error getting documents: \(error)")
     }
     
-    print("Fetch End")
     return violations.compactMap { $0 }
   }
 }

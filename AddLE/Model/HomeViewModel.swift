@@ -10,4 +10,7 @@ import Foundation
 @Observable
 final class HomeViewModel {
   var violations: [Violation] = []
+  var isLoading: Bool = false
+  var isDisplayDeleteAlert: Bool = false
+  var selectedViolation: Violation?
 }

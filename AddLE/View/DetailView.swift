@@ -9,7 +9,8 @@ import SwiftUI
 import MapKit
 
 struct DetailView: View {
-  
+  @Environment(\.dismiss) private var dismiss
+  @Environment(HomeViewModel.self) private var homeViewModel
   @State var detailViewModel: DetailViewModel
   
   let imageData = Violation.dummy[0]
@@ -59,8 +60,9 @@ struct DetailView: View {
       .clipShape(RoundedRectangle(cornerRadius: 12))
       .padding()
     }
+    .navigationTitle("Detail")
     .navigationBarTitleDisplayMode(.inline)
-    .alert("", isPresented: $detailViewModel.isDisplayConfirmAlert) {
+    .alert("Confirm your report", isPresented: $detailViewModel.isDisplayConfirmAlert, actions: {
       Button(action: {
         detailViewModel.isDisplayDoneAlert = true
       }, label: {
@@ -72,14 +74,20 @@ struct DetailView: View {
       } label: {
         Text("Cancel")
       }
-    }
-    .alert("", isPresented: $detailViewModel.isDisplayDoneAlert) {
+    }, message: {
+      Text("Your report will be submitted anonymously.")
+    })
+    .alert("Submitted Successfully", isPresented: $detailViewModel.isDisplayDoneAlert, actions: {
       Button(action: {
-        
+        homeViewModel.violations.removeAll { $0 == detailViewModel.violation }
+        dismiss()
       }, label: {
         Text("Done")
       })
+    }) {
+      Text("Report processing may take 3-5 days.")
     }
+    
   }
   
   @ViewBuilder
@@ -185,4 +193,5 @@ struct DetailView: View {
 
 #Preview {
   DetailView(detailViewModel: DetailViewModel(violation: Violation.dummy[0]))
+    .environment(HomeViewModel())
 }

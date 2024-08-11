@@ -9,11 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
   @Environment(HomeViewModel.self) private var homeViewModel
-  @State private var isLoading: Bool = true
   
   var body: some View {
+    @Bindable var viewModel = homeViewModel
     NavigationStack {
-      if isLoading {
+      if homeViewModel.isLoading {
         ProgressView()
       } else {
         GeometryReader { proxy in
@@ -35,12 +35,29 @@ struct HomeView: View {
         }
         .navigationTitle("DitBool")
         .navigationBarTitleDisplayMode(.large)
+        .alert("Delete violation", isPresented: $viewModel.isDisplayDeleteAlert) {
+          Button(role: .destructive, action: {
+            guard let vio = homeViewModel.selectedViolation else { return }
+            homeViewModel.violations.removeAll { $0 == vio }
+          }, label: {
+            Text("Delete")
+          })
+          
+          Button(role: .cancel) {
+            homeViewModel.selectedViolation = nil
+          } label: {
+            Text("Cancel")
+          }
+        } message: {
+          Text("This violation will be permanently deleted from this app.")
+        }
       }
     }
     .task {
       homeViewModel.violations = await fetchData()
-      isLoading = false
+      homeViewModel.isLoading = false
     }
+    
   }
   
   
@@ -156,7 +173,8 @@ struct HomeView: View {
           .overlay {
             Button(
               action: {
-                
+                homeViewModel.selectedViolation = data
+                homeViewModel.isDisplayDeleteAlert = true
               },
               label: {
                 ZStack {
