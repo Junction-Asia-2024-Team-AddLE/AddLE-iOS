@@ -14,9 +14,11 @@ struct Violation: Codable, Hashable {
   var latitude: Double
   var longitude: Double
   var status: Int
+  var address: String
+  var roadName: String
   
   enum CodingKeys: String, CodingKey {
-    case date, latitude, longitude, status
+    case date, latitude, longitude, status, address, roadName
     case imageUrl = "image"
   }
 }
@@ -28,7 +30,9 @@ extension Violation {
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvIoKwG69OJ-6ZY0nEXGm76c5A8XD1DrNEwA&s",
       latitude: 35.83855686330755,
       longitude: 129.28806264429252,
-      status: 0
+      status: 0,
+      address: "Address",
+      roadName: "Road Name"
     )
   ]
 }

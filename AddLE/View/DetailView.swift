@@ -33,7 +33,7 @@ struct DetailView: View {
           
           
           VStack(alignment: .leading, spacing: 40) {
-            MapView()
+            MapView(detailViewModel.violation)
             
             ComplaintPublicityView()
             
@@ -91,19 +91,19 @@ struct DetailView: View {
   }
   
   @ViewBuilder
-  private func MapView() -> some View {
+  private func MapView(_ data: Violation) -> some View {
     VStack(alignment: .leading, spacing: 0) {
-      Text(detailViewModel.violation.date.koreanDateFormat)
+      Text(data.date.koreanDateFormat)
         .font(.custom(Pretendard.regular, size: 16))
         .foregroundStyle(AppColor.blackText)
       
-      Text("11, Yoodong-gil 26beon-gil")
+      Text("\(data.roadName)")
         .font(.custom(Pretendard.bold, size: 24))
         .foregroundStyle(AppColor.blackText)
         .padding(.top, 20)
         .kerning(-1)
       
-      Text("Namgu, Pohang-si, Gyeongsangbuk-do")
+      Text("\(data.address)")
         .font(.custom(Pretendard.regular, size: 16))
         .foregroundStyle(AppColor.blackText)
         .padding(.top, 8)
@@ -112,16 +112,16 @@ struct DetailView: View {
         initialPosition: .region(
           .init(
             center: .init(
-              latitude: 35.83855686330755,
-              longitude: 129.28806264429252
+              latitude: data.latitude,
+              longitude: data.longitude
             ),
             latitudinalMeters: 200,
             longitudinalMeters: 200)
         )
       ) {
         Marker("", systemImage: "mappin", coordinate: .init(
-          latitude: 35.83855686330755,
-          longitude: 129.28806264429252
+          latitude: data.latitude,
+          longitude: data.longitude
         ))
       }
       .aspectRatio(1.5, contentMode: .fit)

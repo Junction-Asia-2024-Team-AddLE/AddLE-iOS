@@ -75,7 +75,7 @@ struct HomeView: View {
             Text("Total")
               .font(AppFont.subtitleMedium)
               .kerning(-1)
-            Text("12")
+            Text("2")
               .font(AppFont.pointBold)
               .kerning(-1)
           }
@@ -199,8 +199,9 @@ struct HomeView: View {
       
       HStack {
         VStack(alignment: .leading) {
-          Text("Yoodong-gil 26th 11")
+          Text("\(data.roadName)")
             .font(.custom(Pretendard.bold, size: 28))
+            .lineLimit(1)
           Text(data.date.koreanDateFormat)
             .font(.custom(Pretendard.regular, size: 16))
         }
